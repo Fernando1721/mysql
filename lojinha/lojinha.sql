@@ -10,9 +10,9 @@ use lojinhafernando;
 
 create table produtos(
 	id int primary key auto_increment,
-    nomedoproduto varchar(255) not null,
-    estoque varchar(255) not null,
-    valor decimal(10,2) not null
+        nomedoproduto varchar(255) not null,
+        estoque int not null,
+        valor decimal(10,2) not null
 );
 
 show tables;
