@@ -6,12 +6,29 @@
 
 create database lojinhaFernando2;
 use lojinhaFernando2;
+
+
+-- timestamp default current_timestamp (data e hora automática)
+
+
 create table produtos (
 	id int primary key auto_increment,
-    nome varchar(255) not null,
-    moto varchar(255) not null,
+    barcodemoto varchar(255), 
+    nomemoto varchar(255) not null,
+    descricao varchar(255) not null,
+    fabricante varchar(255) not null,
+    datacad timestamp default current_timestamp,
+    -- dataval date,
+    -- date (tipo de dados relacionados a data)
     quantidade int not null,
-    valor decimal(10,3)
+    estoque int not null,
+    estoquemin int not null,
+    unidade varchar(255) not null,
+    localizacao varchar(255),
+    custo decimal(10,2),
+    lucro decimal(10,2),
+    venda decimal(10,2)
+    
 );
 describe produtos;
 
@@ -20,26 +37,9 @@ drop table produtos;
 /************* CRUD *************/
 
 
-insert into produtos(nome,moto,quantidade,valor)
-values ('Fernando Miranda','BMW310',1,32.000);
+insert into produtos(barcodemoto,nomemoto,descricao,fabricante,quantidade,estoque,estoquemin,unidade,localizacao,custo,lucro,venda)
+values ('1234567890','BMWG310','BIG TRAIL','BMW',1,20,10,'UNI','SALA 5',15000,100,30000);
 
-insert into produtos(nome,moto,quantidade,valor)
-values ('Dimitri','HORNET600',1,39.000);
-
-insert into produtos(nome,moto,quantidade,valor)
-values ('Renan','XJ6',1,37.000);
-
-insert into produtos(nome,moto,quantidade,valor)
-values ('Gustavo','KAWASAKIZ900',1,47.000);
-
-insert into produtos (nome,moto,quantidade,valor)
-values ('Maria','XRE300',1,24.000);
-
-insert into produtos(nome,moto,quantidade,valor)
-values ('Ryck','XJ6',1,36.000);
-
-insert into produtos(nome,moto,quantidade,valor)
-values ('Tavinho','XRE300',1,23.000);
 
 
 select * from produtos;
