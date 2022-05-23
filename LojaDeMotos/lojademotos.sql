@@ -38,6 +38,9 @@ values ('Maria','XRE300',1,24.000);
 insert into produtos(nome,moto,quantidade,valor)
 values ('Ryck','XJ6',1,36.000);
 
+insert into produtos(nome,moto,quantidade,valor)
+values ('Tavinho','XRE300',1,23.000);
+
 
 select * from produtos;
 
