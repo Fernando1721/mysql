@@ -61,6 +61,33 @@ update produtos set nome='Robson Vaamonde',moto='BMW1200',valor='62.000' where i
 
 delete from produtos where id=6;
 
+-- --------------------------------------- Criando parte de banco de dados de senha e login ------------------------------
+-- unique (não permitir valores duplicados)
+
+create table usuarios(
+	idusu int primary key auto_increment,
+    usuario varchar(255) not null,
+    login varchar(255) not null unique,
+    senha varchar(255) not null,
+    perfil varchar(255) not null
+);
+
+describe usuarios;
+
+-- para inserir uma senha com criptografia usamos md5()
+
+insert into usuarios(usuario,login,senha,perfil)
+values ('Administrador','admin',md5('admin'),'admin');
+
+insert into usuarios(usuario,login,senha,perfil)
+values('Fernando Miranda','miranda',md5('123456'),'fernando');
+
+select * from usuarios;
+
+-- Acessando o sistema pela tela de login
+-- and (função lógica onde todas as condições devem ser verdadeiras)
+select * from usuarios where login='admin' and senha=md5('admin');
+
 
 
 
